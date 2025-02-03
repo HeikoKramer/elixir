@@ -26,11 +26,9 @@ defmodule Cards do
   end
 
   def load(filename) do
-    {status, binary} = File.read(filename)
-
-    case status do
-        :ok -> :erlang.binary_to_term binary
-        :error -> "That file does not exist"
+    case File.read(filename) do
+        {:ok, binary} -> :erlang.binary_to_term binary
+        {:error, _reason} -> "That file does not exist"
     end
   end
 end
@@ -39,3 +37,5 @@ end
 # Notes:
 # Whenever possible delegate functionality down to existing standard lybrary module functions
 # :erlang gives us access to Erlang lybraries
+# :ok and :error are "Atoms". Atoms are constants whose values are their own name.
+# unused variables are creating a warning in the Elixir shell. We can avoid that by using an undescore: {:error, _reason}
