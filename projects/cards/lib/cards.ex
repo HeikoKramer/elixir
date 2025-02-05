@@ -77,6 +77,14 @@ end
 
 # Notes:
 # Whenever possible delegate functionality down to existing standard lybrary module functions
+#
 # :erlang gives us access to Erlang lybraries
+#
 # :ok and :error are "Atoms". Atoms are constants whose values are their own name.
-# unused variables are creating a warning in the Elixir shell. We can avoid that by using an undescore: {:error, _reason}
+#
+# unused variables are creating a warning in the Elixir shell.
+# We can avoid that by using an undescore: {:error, _reason}
+#
+# there are two ways of testin in Elixir, doctest and test cases.
+# doctest has to follow a specific formating, but is also generating documentation.
+# Tipp: just copy from console in-/outpu.
